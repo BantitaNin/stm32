@@ -60,8 +60,8 @@ all: main-build
 main-build: testservo.elf secondary-outputs
 
 # Tool invocations
-testservo.elf testservo.map: $(OBJS) $(USER_OBJS) D:\cubeide\test2\testservo\STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "testservo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\cubeide\test2\testservo\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="testservo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+testservo.elf testservo.map: $(OBJS) $(USER_OBJS) D:\githubspace\stm32\testservo\STM32F767ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "testservo.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"D:\githubspace\stm32\testservo\STM32F767ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="testservo.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
